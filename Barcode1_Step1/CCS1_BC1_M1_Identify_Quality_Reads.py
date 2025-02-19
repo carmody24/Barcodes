@@ -6,13 +6,14 @@ import time
 import argparse
 import os
 ############################
+#UPDATE the libray name sometimes I add the index number if processing multiple seq reps with diff indexes
 #Global Variables 
 Lib_Name = 'Lib_1_i30' #name you want to be at the start of the files 
 Output_Directory = f'{Lib_Name}_Map1' #currently makes a folder in the directory you are already in 
 os.makedirs(Output_Directory, exist_ok=True) #makes sure no problems if the dir already exists
 
 # define needed functions for data processing
-
+#UPDATE the left and right replace seq with the sequences that flank your designed tiles, ususally the primer added seq so they are properly extracted from the design file
 def find_designed(des):
     """ takes a file where every line is a designed tile and creates a lookup dictionary of all designed tiles """
     dt = [] # initialize a list of designed tiles from design file
@@ -47,7 +48,7 @@ def getmid(seq, pre, post):
     
     return poi
 
-
+#UPDATE the below definition with the  correct Tile length (t_len), correct BC1 length (a_len), and sequences pre and post tile and BC1.
 def tilebc_mapper(readfile,dtd, t_len = 120, a_len = 11, tile_pre = "CACCATG", tile_post = "GGATCCG", 
                   adBC_pre = "CGCTAGC", adBC_post = "CTCGAGA"): 
                   #rpBC_pre = "GCTCGAG", rpBC_post = "GGCC...CAT"):
@@ -175,33 +176,19 @@ def main(input_file, design_file):
     summary.to_csv(summary_path, index=False)
 
 if __name__ == "__main__":
-    # Check if the script is being run as the main program
-
+    
     # Create ArgumentParser object with a description
     parser = argparse.ArgumentParser(description='Build Tile-BC map from step1 fastq file')
 
     # Add arguments to the parser
-    parser.add_argument('-i', '--input', type=str, required=True, help='Input file path')
-    # Add an argument for the input file path. -i or --input specifies the argument name.
-    # It's required (required=True), of type string (type=str), and has a help message.
+    parser.add_argument('-i', '--input', type=str, required=True, help='Input file path, fastq file of paired reads from BC1 Step1')
 
-    #parser.add_argument('-o', '--output', type=str, required=True, help='Raw data output file path')
-    # Add an argument for the output file path. -o or --output specifies the argument name.
-    # It's required (required=True), of type string (type=str), and has a help message.
-
-    # parser.add_argument('-c', '--clean_output', type=str, required=True, help='Clean data output file path')
-    # # Add an argument for the output file path. -o or --output specifies the argument name.
-    # # It's required (required=True), of type string (type=str), and has a help message.
-
-    parser.add_argument('-d', '--design', type=str, required=True, help='Design file (each line in file is a designed tile) path')
-    # Add an argument for the output file path. -o or --output specifies the argument name.
-    # It's required (required=True), of type string (type=str), and has a help message.
+    parser.add_argument('-d', '--design', type=str, required=True, help='Design txt file (each line in file is a designed tile) path')
 
     # Parse the command-line arguments
     args = parser.parse_args()
 
     # Call the main function with parsed arguments
-
     main(args.input, args.design)
 
   
