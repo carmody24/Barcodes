@@ -23,6 +23,6 @@ fi
 INPUT_DIR=$1
 
 # Call your Python script with the necessary parameters
-python3 /pathway/to/CCS3Optional_No_Tile_Map3.py --input_dir "$INPUT_DIR"
+python3 /pathway/to/CCS3Optional_No_Tile_Control_Map3.py --input_dir "$INPUT_DIR"
 
 echo "Processing complete for replicates in $INPUT_DIR."
