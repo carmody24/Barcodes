@@ -18,4 +18,4 @@
 
 module load python
 
-python3 CCS1_BC1_M1_Identify_Quality_Reads.py -i Step1_BC1_Paired_Seq_Reads.fastq.gz.assembled.fastq -d Tiles_Design_File.txt
+python3 /pathway/to/CCS1_BC1_M1_Identify_Quality_Reads.py -i /pathway/to/Step1_BC1_Paired_Seq_Reads.fastq.gz.assembled.fastq -d /pathway/to/Tiles_Design_File.txt
