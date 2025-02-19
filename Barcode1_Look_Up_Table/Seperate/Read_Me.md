@@ -2,6 +2,8 @@ The sepearte version of BC1 LUT has many seperate scripts and BASH files that I 
 
 In the future I will add an additional Combined folder that will consolidate the steps into fewer scripts for steps that do not require analysis/interperataion of the results before moving onto the next step.
 
+Currently all files are in a python file + matching BASH file format except for CCS5 that creates graphs with is a JupiterNotebook file. The combined version will have python script submittable version of this. However sometimes it can be helpful to use JN to edit graph scales/bins real time and test diff graph propterties to get best visibility of data depending on the data size/distribution. 
+
 **File Naming:**
 
 **CC** - for the author initials
