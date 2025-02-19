@@ -2,14 +2,13 @@ import pandas as pd
 import gc
 import numpy as np
 import matplotlib.pyplot as plt
-#import seaborn as sns
 import os
 import argparse
 
 #################
 #code to talk with comand line docs you input 
 #create are parser
-parser = argparse.ArgumentParser(description='Process input CSV.')
+parser = argparse.ArgumentParser(description='Process input CSV to remove low quality reads that don't have correct tile length, BC1 length, and/or design file match.')
 
 #add arguments to the parser
 parser.add_argument('-i', '--input', type=str, required=True, help='Input CSV file path of Map1 created from CCS1_BC1_M1_Identify_Quality_Reads') 
