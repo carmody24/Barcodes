@@ -31,7 +31,7 @@ Currently all files are in a python file + matching BASH file format except for 
 
 **CCS6Optional**: If you have multiple sequencing reps this is where you compare them. Seq reps = same library but labeled with different indexes before sequencing to help better catch sequencing errors. You can choose to Merge the reads from the two seq reps if you have low coverage of your library or you can choose to intersect the sequencing reps (only keep reads where the Tile+BC pair shows up in both sequencing reps at least once). Intersect is good if you are deeply sequenced but at very high sequencing depths  you can start to see sequencing errors appear in both reps. Up until this point sequencing reps should have been taken through all parts of the process seperately (create all previous maps for seperately). Inputs hardcoded: R1 .csv file of the first seq rep, R2 .csv file of the second seq rep, following those --intersect to run intersect funtion and/or --merge to run merge function. Outputs will be .csv summary files, .csv Intersected Map3, .csv Merged Map3, graphs of unique tiles and tile barcode coverage. 
 
-
+**CCS7** : Finally make your BC1 look up table (LUT) of all unique Tile + BC1 ccombinations that you will use later when you only have the BC1 to map it back to this LUT to determine which Tile the BC1 corresponds to. Input an input directory containing .csv Map3 files when you call the BASH script. It will process each file in the directory seperately. You will need to update the read Threshold cut off usually based on graphs produced of Tile+BC coverage when expontial scale histogram transitions from exponential to bell curve shape. 
 
 
 
