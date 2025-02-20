@@ -1,8 +1,8 @@
+**Goal of these Files**
+The goal of the files in this folder are to processing sequncing reads to associaate a barcode (referred to as BC1 or ADBC) with a particular longer sequence of interest that is also on the read (referred to as Tile). These steps help make a look up table to asociate these two sequences so that in the future if you do sequencing that only allows you to retrieve the barcode, you will be able to use the barcode to look up in the table created here what longer tile sequence it corresponds to.
+
 **What is in this folder**
-
-The sepearte version of BC1 LUT has many seperate scripts and BASH files that I used when first creating these to make it easier for debugging steps.
-
-In the future I will add an additional Combined folder that will consolidate the steps into fewer scripts for steps that do not require analysis/interperataion of the results before moving onto the next step.
+The sepearte version of BC1 LUT has many seperate scripts and BASH files that I used when first creating these to make it easier for debugging steps. The Combined folder has consolidated versions of these steps. 
 
 Currently all files are in a python file + matching BASH file format except for CCS5 that creates graphs with is a JupiterNotebook file. The combined version will have python script submittable version of this. However sometimes it can be helpful to use JN to edit graph scales/bins real time and test diff graph propterties to get best visibility of data depending on the data size/distribution. 
 
@@ -15,6 +15,11 @@ Currently all files are in a python file + matching BASH file format except for 
 **S#Optional** - if there is Optional after a step number then that step can be skipped if the addional feature of the Step is not desired
 
 **_BASH.sh** - all BASH files end with this to help make them stand out. Designed origionally for submitting to Berkeley Savio high-prformance computing cluster with SLURM job scheduler. Will need to at least add an account to make it work. Most of the wall cock times are much longer than would be needed.
+
+**ADBC** - BC1 is referred to as ADBC often in the code because the origional BC1 is based on an Activation Domain Barcode. Feel free to modify if you want but this name is relied on often throughout all of the steps code so make sure you update everything.
+
+**#UPDATE** - you should search for #UPDATE throuhgout the sript before running the code becuase I have started comments with that if you need to update something in that area to be compatible with your system. Usually updating naming of how you want your files to be saved, file type, unique sequences the code searches for, and correct lengths of sequences expected.
+
 
 
 **What files do:**
