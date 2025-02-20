@@ -17,7 +17,7 @@ Currently all files are in a python file + matching BASH file format except for 
 **_BASH.sh** - all BASH files end with this to help make them stand out. Designed origionally for submitting to Berkeley Savio high-prformance computing cluster with SLURM job scheduler. Will need to at least add an account to make it work. Most of the wall cock times are much longer than would be needed.
 
 
-**What files do**
+**What files do:**
 
 **CCS1** : organize paired sequencing reads (can be done via Labtools pear script) into a dataframe. Look for reads that contain correct BC1 and Tile sequneces based on flanking sequences, length, and presence in design file. Input .fastq paired seq file and .txt design file. Input pathways hardcoded into BASH file. Output of .csv summary table and .csv Map1 table. 
 
