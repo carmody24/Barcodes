@@ -1,4 +1,4 @@
-**Goal of these Files**
+**Goal of This Folder**
 The goal of the files in this folder are to processing sequncing reads to associaate a barcode (referred to as BC1 or ADBC) with a particular longer sequence of interest that is also on the read (referred to as Tile). These steps help make a look up table to asociate these two sequences so that in the future if you do sequencing that only allows you to retrieve the barcode, you will be able to use the barcode to look up in the table created here what longer tile sequence it corresponds to.
 
 **What is in this folder**
