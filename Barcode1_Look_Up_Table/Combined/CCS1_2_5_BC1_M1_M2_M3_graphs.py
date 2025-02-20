@@ -10,7 +10,7 @@ import seaborn as sns
 #UPDATE names based on you lib and preferences and what file type you want your figures to be saved
 # Global Variables
 Lib_Name = 'Lib_1_i'
-Output_Directory = f'{Lib_Name}_CCS1_BC1_Combined_Maps_and_Graphs'
+Output_Directory = f'{Lib_Name}_CCS1_2_5_BC1_Maps_and_Graphs'
 os.makedirs(Output_Directory, exist_ok=True)
 Fig_Format = 'jpeg'
 
@@ -134,6 +134,7 @@ def analyze_map1_A_qual(map1_data3):
     plt.clf()
 
 #Graphs of coverage of Unique combinations of Tile + BC1 and of Unique Tile coverage based on Map3 (Map1 filtered to only keep rows with correct length of tile and BC1 and tile must be in design file)
+#uf or unfiltered is added to these graphs names becuase in later step these graphs will be made again but with filtered data
 def analyze_tcov_nom(map3_data):
     sns.histplot(x='count', data=map3_data, bins=100)
     plt.title(f'{Lib_Name} Unique Tile Coverage Unfiltered')
@@ -203,7 +204,7 @@ def process_maps(input_file, design_file):
     })])
     
     # Save combined summary
-    combined_summary.to_csv(os.path.join(Output_Directory, f'{Lib_Name}_combined_Summary.csv'), index=False)
+    combined_summary.to_csv(os.path.join(Output_Directory, f'{Lib_Name}_CCS1_2_5_BC1_Summary.csv'), index=False)
 
     # Analyze Map3
     analyze_tbcov_exp(tbcov)
