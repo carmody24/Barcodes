@@ -116,7 +116,7 @@ def tilebc_mapper(readfile, bc2_len = 6, bc1_len = 11, bc2_pre = "CTTCTGA", bc2_
             
     # make the df
     tileBC_dict = {"Reads":sequences, "Int_BC":int_list, "Int_BC Len" : int_lengths, "Int_BC Qual":intq_list, 
-                   "ADBCs":adBC_list, "Tile_BC Len": adBC_lengths,"Tile_BC Qual": aq_list}
+                   "AD BCs":adBC_list, "Tile_BC Len": adBC_lengths,"Tile_BC Qual": aq_list}
     tileBC_df = pd.DataFrame.from_dict(tileBC_dict)
     print(f'Total number of sequences Int_BC Qual =1: {(tileBC_df["Int_BC Qual"]==1).sum()}')
     print(f'Total number of sequences Tile_BC Qual =1: {(tileBC_df["Tile_BC Qual"]==1).sum()}')
