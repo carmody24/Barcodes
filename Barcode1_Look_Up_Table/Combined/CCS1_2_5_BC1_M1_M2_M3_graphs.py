@@ -31,8 +31,8 @@ def getmid(seq, pre, post):
     match = re.search(f"{pre}(.*){post}", seq)
     return match.group(1) if match else "X" #puts and X if the pre and/or post seq cannot be found 
 
-def tilebc_mapper(readfile, dtd, t_len=120, a_len=11, tile_pre="CACCATG", tile_post="GGATCCG",
-                  adBC_pre="CGCTAGC", adBC_post="CTCGAGA"):  #UPDATE you need to change the correct tile length (t_len)and BC1 length (a_len) and the pre and post sequences flanking them
+def tilebc_mapper(readfile, dtd, t_len=120, bc1_len=11, tile_pre="CACCATG", tile_post="GGATCCG",
+                  adBC_pre="CGCTAGC", adBC_post="CTCGAGA"):  #UPDATE you need to change the correct tile length (t_len)and BC1 length (bc1_len) and the pre and post sequences flanking them
     """Processes input sequences to map tiles and barcodes."""  
     
     # Lists to store extracted data  
@@ -54,7 +54,7 @@ def tilebc_mapper(readfile, dtd, t_len=120, a_len=11, tile_pre="CACCATG", tile_p
 
                 adBC = getmid(seq, adBC_pre, adBC_post)  
                 adBC_len = len(adBC)  
-                adBC_quality = 1 if adBC_len == a_len else 0  # Quality column for BC1, 1 if length matches expected length otherwise 0  
+                adBC_quality = 1 if adBC_len == bc1_len else 0  # Quality column for BC1, 1 if length matches expected length otherwise 0  
 
                 # Store extracted values  
                 tile_list.append(tile)  
@@ -111,11 +111,11 @@ def analyze_map1_T_len(map1_data):
     plt.savefig(f_path, format=Fig_Format)
     plt.clf()
 
-def analyze_map1_A_len(map1_data1):
+def analyze_map1_bc1_len(map1_data1):
     plt.hist(map1_data1['A Len'], bins=50)
     plt.title(f'{Lib_Name} BC Length Map1')
     plt.xlim([0, 15])
-    f_path1 = os.path.join(Output_Directory, f'{Lib_Name}_A_Length_Map1.{Fig_Format}')
+    f_path1 = os.path.join(Output_Directory, f'{Lib_Name}_bc1_length_Map1.{Fig_Format}')
     plt.savefig(f_path1, format=Fig_Format)
     plt.clf()
     
@@ -180,7 +180,7 @@ def process_maps(input_file, design_file):
 
     # Analyze Map1
     analyze_map1_T_len(rawmap)
-    analyze_map1_A_len(rawmap)
+    analyze_map1_bc1_len(rawmap)
     analyze_map1_T_qual(rawmap)
     analyze_map1_A_qual(rawmap)
    
