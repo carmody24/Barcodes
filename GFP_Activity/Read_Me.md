@@ -1,0 +1,1 @@
+Use the BC1 LUT and BC1 and BC2 LUT to create a fully comprehensive LUT to link BC1-BC2 combinations identified in the sort back to the Tile it is associated with from BC1 LUT. Combine this information with cell sorting GFP and cell count information to determine GFP activity.
