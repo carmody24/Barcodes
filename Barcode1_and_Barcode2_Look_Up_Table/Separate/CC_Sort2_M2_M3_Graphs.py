@@ -106,7 +106,7 @@ gc.collect()
 
 # Create Map3 (Tiles, BC, and Cat (tile - BC)
 map3 = pd.read_csv(m2fp)
-adcol = map3['ADBCs'].copy()
+adcol = map3['AD BCs'].copy()
 map3['Cat'] = map3['Int_BC'].str.cat(adcol, sep="-")
 Map2_Summary_Dict['Category'].append('Map3 Shape (should be same as Total Correct Tile and Inc BC)')
 Map2_Summary_Dict['Read Count'].append(map3.shape[0])
