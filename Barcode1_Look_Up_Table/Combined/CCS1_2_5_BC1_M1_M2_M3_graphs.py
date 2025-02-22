@@ -32,12 +32,12 @@ def getmid(seq, pre, post):
     return match.group(1) if match else "X" #puts and X if the pre and/or post seq cannot be found 
 
 def tilebc_mapper(readfile, dtd, t_len=120, bc1_len=11, tile_pre="CACCATG", tile_post="GGATCCG",
-                  adBC_pre="CGCTAGC", adBC_post="CTCGAGA"):  #UPDATE you need to change the correct tile length (t_len)and BC1 length (bc1_len) and the pre and post sequences flanking them
+                  bc1_pre="CGCTAGC", bc1_post="CTCGAGA"):  #UPDATE you need to change the correct tile length (t_len)and BC1 length (bc1_len) and the pre and post sequences flanking them
     """Processes input sequences to map tiles and barcodes."""  
     
     # Lists to store extracted data  
     tile_list, tile_lengths, tq_list, des_query = [], [], [], []  
-    adBC_list, adBC_lengths, aq_list = [], [], []  
+    bc1_list, bc1_lengths, bc1q_list = [], [], []  
     total_sequences = 0  # Track the number of reads processed  
 
     with open(readfile, 'r') as fin:  # Reads paired fastq file and extracts the reads  
@@ -52,7 +52,7 @@ def tilebc_mapper(readfile, dtd, t_len=120, bc1_len=11, tile_pre="CACCATG", tile
                 tile_quality = 1 if tile_len == t_len else 0  # Quality column given 1 if length matches expected length, otherwise 0  
                 tile_is_designed = 1 if tile in dtd else 0  # Checks if the tile is in the design dictionary  
 
-                adBC = getmid(seq, adBC_pre, adBC_post)  
+                adBC = getmid(seq, bc1_pre, bc1_post)  
                 adBC_len = len(adBC)  
                 adBC_quality = 1 if adBC_len == bc1_len else 0  # Quality column for BC1, 1 if length matches expected length otherwise 0  
 
@@ -62,9 +62,9 @@ def tilebc_mapper(readfile, dtd, t_len=120, bc1_len=11, tile_pre="CACCATG", tile
                 tq_list.append(tile_quality)  
                 des_query.append(tile_is_designed)  
 
-                adBC_list.append(adBC)  
-                adBC_lengths.append(adBC_len)  
-                aq_list.append(adBC_quality)  
+                bc1_list.append(adBC)  
+                bc1_lengths.append(adBC_len)  
+                bc1q_list.append(adBC_quality)  
 
     # Create DataFrame containing all extracted information  
     tileBC_df = pd.DataFrame({  
@@ -72,9 +72,9 @@ def tilebc_mapper(readfile, dtd, t_len=120, bc1_len=11, tile_pre="CACCATG", tile
         "T Len": tile_lengths,  
         "T Qual": tq_list,  
         "Designed": des_query,  
-        "AD BCs": adBC_list,  
-        "A Len": adBC_lengths,  
-        "A Qual": aq_list  
+        "AD BCs": bc1_list,  
+        "A Len": bc1_lengths,  
+        "A Qual": bc1q_list  
     })  
 
     # Summary table is initialized  
