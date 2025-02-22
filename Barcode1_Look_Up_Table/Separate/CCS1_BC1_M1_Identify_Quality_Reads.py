@@ -48,9 +48,9 @@ def getmid(seq, pre, post):
     
     return poi
 
-#UPDATE the below definition with the  correct Tile length (t_len), correct BC1 length (a_len), and sequences pre and post tile and BC1.
-def tilebc_mapper(readfile,dtd, t_len = 120, a_len = 11, tile_pre = "CACCATG", tile_post = "GGATCCG", 
-                  adBC_pre = "CGCTAGC", adBC_post = "CTCGAGA"): 
+#UPDATE the below definition with the  correct Tile length (t_len), correct BC1 length (bc1_len), and sequences pre and post tile and BC1.
+def tilebc_mapper(readfile,dtd, t_len = 120, bc1_len = 11, tile_pre = "CACCATG", tile_post = "GGATCCG", 
+                  bc1_pre = "CGCTAGC", bc1_post = "CTCGAGA"): 
                   #rpBC_pre = "GCTCGAG", rpBC_post = "GGCC...CAT"):
     
     #readfile = file of SEQUENCES ONLY
@@ -80,9 +80,9 @@ def tilebc_mapper(readfile,dtd, t_len = 120, a_len = 11, tile_pre = "CACCATG", t
     
     des_query = [] # tells us if tile matches design or not
     
-    adBC_list = []
-    adBC_lengths = []
-    aq_list = []
+    bc1_list = []
+    bc1_lengths = []
+    bc1q_list = []
     rpBC_list = []
     rpBC_lengths = []
     rq_list = []
@@ -103,15 +103,15 @@ def tilebc_mapper(readfile,dtd, t_len = 120, a_len = 11, tile_pre = "CACCATG", t
             des_query.append(0)
 #         print(tile)
         
-        adBC = getmid(read, adBC_pre, adBC_post)
-        adBC_list.append(adBC)
-        adBC_len = len(adBC)
-        adBC_lengths.append(adBC_len)
-        if adBC_len == a_len:
-            aq_list.append(1)
+        bc1 = getmid(read, bc1_pre, bc1_post)
+        bc1_list.append(bc1)
+        bc1_len = len(bc1)
+        bc1_lengths.append(bc1_len)
+        if bc1_len == bc1_len:
+            bc1q_list.append(1)
         else:
-            aq_list.append(0)
-#         print(adBC)
+            bc1q_list.append(0)
+#         print(bc1)
 
         #rpBC = getmid(read, rpBC_pre, rpBC_post)
         #rpBC_list.append(rpBC)
@@ -125,7 +125,7 @@ def tilebc_mapper(readfile,dtd, t_len = 120, a_len = 11, tile_pre = "CACCATG", t
     # make the df
     
     tileBC_dict = {"Reads":sequences, "Tiles":tile_list, "T Len" : tile_lengths, "T Qual":tq_list, "Designed": des_query, 
-                  "AD BCs":adBC_list, "A Len": adBC_lengths,"A Qual": aq_list}
+                  "AD BCs":bc1_list, "A Len": bc1_lengths,"A Qual": bc1q_list}
     tileBC_df = pd.DataFrame.from_dict(tileBC_dict)
     #print(f"Total number of sequences T Qual =1: {(tileBC_df['T Qual']==1).sum()}")
     #print(f"Total number of sequences A Qual =1: {(tileBC_df['A Qual']==1).sum()}")
