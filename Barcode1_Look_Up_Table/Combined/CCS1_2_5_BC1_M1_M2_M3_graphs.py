@@ -39,11 +39,13 @@ def tilebc_mapper(readfile, dtd, t_len=120, bc1_len=11, tile_pre="CACCATG", tile
     tile_list, tile_lengths, tq_list, des_query = [], [], [], []  
     bc1_list, bc1_lengths, bc1q_list = [], [], []  
     total_sequences = 0  # Track the number of reads processed  
+    sequences =[]
 
     with open(readfile, 'r') as fin:  # Reads paired fastq file and extracts the reads  
         for line in fin:  
             if line.startswith('@'):  # Identifies the sequence header  
                 seq = next(fin).strip()  # Reads the actual sequence  
+                sequences.append(seq) # adds seq to reads list 
                 total_sequences += 1  
 
                 # Identify Tile and BC1 based on pre and post sequences and check length  
@@ -68,6 +70,7 @@ def tilebc_mapper(readfile, dtd, t_len=120, bc1_len=11, tile_pre="CACCATG", tile
 
     # Create DataFrame containing all extracted information  
     tileBC_df = pd.DataFrame({  
+        "Reads": sequences,
         "Tiles": tile_list,  
         "T Len": tile_lengths,  
         "T Qual": tq_list,  
