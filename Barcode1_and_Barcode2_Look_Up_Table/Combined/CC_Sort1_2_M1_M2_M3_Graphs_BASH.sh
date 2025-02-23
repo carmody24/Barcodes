@@ -30,6 +30,6 @@ do
   fi
 
   # Call your Python script with the necessary parameters
-  python3 /pathway/to/CC_Sort1_M1_M2_M3_Graphs_chatgpt.py --input "$file" 
+  python3 /pathway/to/CC_Sort1_2_M1_M2_M3_Graphs.py --input "$file" 
 
 done
