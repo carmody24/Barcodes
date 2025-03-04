@@ -132,7 +132,7 @@ if __name__ == "__main__":
     parser.add_argument('-i', '--intersect', action='store_true', help='Intersect the Map3 files')
     args = parser.parse_args()
 
-    if args.combine:
+    if args.merge:
         combine_maps(args.rep1, args.rep2)
     if args.intersect:
         intersect_maps(args.rep1, args.rep2)
