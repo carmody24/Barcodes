@@ -139,8 +139,8 @@ def process_input_file(input_file):
     #map1_nans = rawmap.replace(0, np.nan)
     map1_nans = rawmap[(rawmap["Int_BC Qual"] == 1) & (rawmap["Tile_BC Qual"] == 1)]
     map2 = map1_nans.dropna().reset_index().drop(columns=['index', 'Reads', 'Int_BC Len', 'Int_BC Qual', 'Tile_BC Len', 'Tile_BC Qual'])
-    m2fp = os.path.join(output_directory, f'{base_name}_{Lib_Name}_Map2.csv')
-    map2.to_csv(m2fp, index=False)
+    #m2fp = os.path.join(output_directory, f'{base_name}_{Lib_Name}_Map2.csv')
+    #map2.to_csv(m2fp, index=False) #UPDATE can uncomment if you want map2 created but you dont use it for anything
     
     map3 = map2.copy()
     # Convert the columns to strings if necessary
