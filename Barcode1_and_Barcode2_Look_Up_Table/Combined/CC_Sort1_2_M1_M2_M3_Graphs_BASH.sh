@@ -21,7 +21,7 @@ fi
 INPUT_DIR=$1
 
 # Loop through each .fastq.gz.assembled.fastq file in the input directory
-for file in "$INPUT_DIR"/*.fastq.gz.assembled.fastq; 
+for file in "$INPUT_DIR"/*.fastq.gz.assembled.fastq; #UPDATE if your file is named differently need to change this so it matches what your file is
 do 
   # Check if no fastq files found
   if [ ! -e "$file" ]; then
