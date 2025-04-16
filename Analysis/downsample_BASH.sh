@@ -21,8 +21,8 @@ if [ -z "$1" ]; then
 fi
 
 # Set up variables
-INPUT_DIR=$1
-DOWNSAMPLE_FRACTION=0.1  # Adjust fraction as needed
+INPUT_DIR=$1 
+DOWNSAMPLE_FRACTION=0.1  #UPDATE with the fraction you want downsampled (0.1 = 10%) 
 
 # Format fraction for filenames (replace "." with "-")
 SAFE_FRACTION="${DOWNSAMPLE_FRACTION//./-}"
