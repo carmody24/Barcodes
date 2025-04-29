@@ -21,7 +21,7 @@ fi
 INPUT_DIR=$1
 
 # Call your Python script with the necessary parameters
-python3 /pathway/to/CC_Sort4_Filter_M3.py --input_dir "$INPUT_DIR"
+python3 /pathway/to/CC_Sort4_LUT.py --input_dir "$INPUT_DIR"
 
 echo "Processing complete for all .csv files in $INPUT_DIR."
 
