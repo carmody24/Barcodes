@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Author: carmodyc@berkeley.edu
 
-#SBATCH --job-name=Sort_Map3
+#SBATCH --job-name=Sort_Map3_Analysis
 #SBATCH --account=
 #SBATCH --partition=savio2
 #SBATCH --time=12:00:00
@@ -21,7 +21,7 @@ fi
 INPUT_DIR=$1
 
 # Call your Python script with the necessary parameters
-python3 /pathway/to/Sort_CC3_M3_Filter_Analysis.py --input_dir "$INPUT_DIR"
+python3 /pathway/to/CC_Sort3Optional_M3_Filter_Analysis.py --input_dir "$INPUT_DIR"
 
 echo "Processing complete for all .csv files in $INPUT_DIR."
 
