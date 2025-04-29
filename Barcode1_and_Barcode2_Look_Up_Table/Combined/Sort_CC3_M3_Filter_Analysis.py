@@ -79,23 +79,23 @@ tcov.columns = ['AD BCs', 'count']
 tcov['count'] = tcov['count'].astype(int)
 
 # Calculate the number of Cat with counts above thresholds
-above_2 = tbcov[tbcov['count'] > 2].shape[0]
-above_3 = tbcov[tbcov['count'] > 3].shape[0]
-above_5 = tbcov[tbcov['count'] > 5].shape[0]
-above_10 = tbcov[tbcov['count'] > 10].shape[0]
-above_100 = tbcov[tbcov['count'] > 100].shape[0]
-above_1000 = tbcov[tbcov['count'] > 1000].shape[0]
-above_10000 = tbcov[tbcov['count'] > 10000].shape[0]
+above_2 = tbcov[tbcov['count'] >= 2].shape[0]
+above_3 = tbcov[tbcov['count'] >= 3].shape[0]
+above_5 = tbcov[tbcov['count'] >= 5].shape[0]
+above_10 = tbcov[tbcov['count'] >= 10].shape[0]
+above_100 = tbcov[tbcov['count'] >= 100].shape[0]
+above_1000 = tbcov[tbcov['count'] >= 1000].shape[0]
+above_10000 = tbcov[tbcov['count'] >= 10000].shape[0]
 
 
 # Calculate the number of Tiles with counts above thresholds
-tabove_2 = tcov[tcov['count'] > 2].shape[0]
-tabove_3 = tcov[tcov['count'] > 3].shape[0]
-tabove_5 = tcov[tcov['count'] > 5].shape[0]
-tabove_10 = tcov[tcov['count'] > 10].shape[0]
-tabove_100 = tcov[tcov['count'] > 100].shape[0]
-tabove_1000 = tcov[tcov['count'] > 1000].shape[0]
-tabove_10000 = tcov[tcov['count'] > 10000].shape[0]
+tabove_2 = tcov[tcov['count'] >= 2].shape[0]
+tabove_3 = tcov[tcov['count'] >= 3].shape[0]
+tabove_5 = tcov[tcov['count'] >= 5].shape[0]
+tabove_10 = tcov[tcov['count'] >= 10].shape[0]
+tabove_100 = tcov[tcov['count'] >= 100].shape[0]
+tabove_1000 = tcov[tcov['count'] >= 1000].shape[0]
+tabove_10000 = tcov[tcov['count'] >= 10000].shape[0]
 
 
 # Add info to summary dict
@@ -105,49 +105,49 @@ Map3_Summary_Dict['Read Count'].append(map3.shape[0])
 Map3_Summary_Dict['Category'].append('Unique Tile + BC Count')
 Map3_Summary_Dict['Read Count'].append(tbcov.shape[0])
 
-Map3_Summary_Dict['Category'].append('Number of Cat with counts above  2')
+Map3_Summary_Dict['Category'].append('Number of Cat with counts greater or equal to  2')
 Map3_Summary_Dict['Read Count'].append(above_2)
 
-Map3_Summary_Dict['Category'].append('Number of Cat with counts above 3')
+Map3_Summary_Dict['Category'].append('Number of Cat with counts greater or equal to 3')
 Map3_Summary_Dict['Read Count'].append(above_3)
 
-Map3_Summary_Dict['Category'].append('Number of Cat with counts above 5')
+Map3_Summary_Dict['Category'].append('Number of Cat with counts greater or equal to 5')
 Map3_Summary_Dict['Read Count'].append(above_5)
 
-Map3_Summary_Dict['Category'].append('Number of Cat with counts above 10')
+Map3_Summary_Dict['Category'].append('Number of Cat with counts greater or equal to 10')
 Map3_Summary_Dict['Read Count'].append(above_10)
 
-Map3_Summary_Dict['Category'].append('Number of Cat with counts above 100')
+Map3_Summary_Dict['Category'].append('Number of Cat with counts greater or equal to 100')
 Map3_Summary_Dict['Read Count'].append(above_100)
 
-Map3_Summary_Dict['Category'].append('Number of Cat with counts above 1,000')
+Map3_Summary_Dict['Category'].append('Number of Cat with counts greater or equal to 1,000')
 Map3_Summary_Dict['Read Count'].append(above_1000)
 
-Map3_Summary_Dict['Category'].append('Number of Cat with counts above 10,000')
+Map3_Summary_Dict['Category'].append('Number of Cat with counts greater or equal to 10,000')
 Map3_Summary_Dict['Read Count'].append(above_10000)
 
 Map3_Summary_Dict['Category'].append('Unique Tile  Count')
 Map3_Summary_Dict['Read Count'].append(tcov.shape[0])
 
-Map3_Summary_Dict['Category'].append('Number of Tiles with counts above  2')
+Map3_Summary_Dict['Category'].append('Number of Tiles with counts greater or equal to  2')
 Map3_Summary_Dict['Read Count'].append(tabove_2)
 
-Map3_Summary_Dict['Category'].append('Number of Tiles with counts above 3')
+Map3_Summary_Dict['Category'].append('Number of Tiles with counts greater or equal to 3')
 Map3_Summary_Dict['Read Count'].append(tabove_3)
 
-Map3_Summary_Dict['Category'].append('Number of Tiles with counts above 5')
+Map3_Summary_Dict['Category'].append('Number of Tiles with counts greater or equal to 5')
 Map3_Summary_Dict['Read Count'].append(tabove_5)
 
-Map3_Summary_Dict['Category'].append('Number of Tiles with counts above 10')
+Map3_Summary_Dict['Category'].append('Number of Tiles with counts greater or equal to 10')
 Map3_Summary_Dict['Read Count'].append(tabove_10)
 
-Map3_Summary_Dict['Category'].append('Number of Tiles with counts above 100')
+Map3_Summary_Dict['Category'].append('Number of Tiles with counts greater or equal to 100')
 Map3_Summary_Dict['Read Count'].append(tabove_100)
 
-Map3_Summary_Dict['Category'].append('Number of Tiles with counts above 1,000')
+Map3_Summary_Dict['Category'].append('Number of Tiles with counts greater or equal to 1,000')
 Map3_Summary_Dict['Read Count'].append(tabove_1000)
 
-Map3_Summary_Dict['Category'].append('Number of Tiles with counts above 10,000')
+Map3_Summary_Dict['Category'].append('Number of Tiles with counts greater or equal to 10,000')
 Map3_Summary_Dict['Read Count'].append(tabove_10000)
 
 # Export summary
