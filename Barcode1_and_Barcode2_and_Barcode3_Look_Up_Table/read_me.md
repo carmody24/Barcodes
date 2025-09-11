@@ -8,3 +8,6 @@ Note: all of my local JN analysis are designed where if you update the specified
 
 ***Treble Step2*** 
 This is a python file that is designed to be submitted to HPC via the BASH file with the same name. Input is a folder with your seq data in it in a fastq or fastq.gz format. In the BASH file the default file type is .fastq.gz which it will look for so change that in the BASH file if you have a .fastq file type. The python code is written to recognize either file type and read it in appropriately. Step 2 only recovers barcodes from step 1 not the tiles. The code will look for 3 barcodes based on the preceeding and post sequence and length you give it and make a csv file look-up table with similar format to step1. It will also make histograms of quality and length distribution for each BC.
+
+***Filter Treble Step2*** 
+Input folder containing one CSV file and a threshold number of minimum reads you want to filter the dataset by. You input the threshold number and column you want to filter by, this is typically the column with the combination of all the barcodes concatenated. This can be submitted to HPC via the accomponying BASH file.
