@@ -31,10 +31,6 @@ Thres_TBcov = 5 #UPDATE to the read min threshold you want = critical
 output_directory = os.path.join(os.getcwd(), f'{Lib_Name}_{base_name}_filtered_map4_unique_Cat')
 os.makedirs(output_directory, exist_ok=True)
 
-# Define the summary directory within the output directory
-summary_dir = os.path.join(output_directory, f'{Lib_Name}_filtered_map4_summary')
-os.makedirs(summary_dir, exist_ok=True)
-
 def process_map4_file(file_path):
     Map4_Summary_Dict = {
         'Category': [],
