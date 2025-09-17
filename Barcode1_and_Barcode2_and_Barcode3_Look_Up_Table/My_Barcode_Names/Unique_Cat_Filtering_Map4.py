@@ -342,7 +342,7 @@ def process_map4_file(file_path):
     # Filter the DataFrame based on the read_cut_off threshold and export dfs
     read_cut_off = 5 #UPDATE with diff read cutoff
     weak_filtered_df = map4_filtered_weak[map4_filtered_weak['Cat_Count'] >= read_cut_off]
-    dffww = os.path.join(output_directory, f'{Lib_Name}_{base_name}_map4_{THRESH}_match_read_{read_cut_off}_filter.csv')
+    dffww = os.path.join(output_directory, f'{Lib_Name}_{base_name}_map4_{THRESH}_match_{read_cut_off}_read_min_filter.csv')
     weak_filtered_df.to_csv(dffww, index=False)
 
     Map4_Summary_Dict['Category'].append('New Section')
@@ -372,7 +372,7 @@ def process_map4_file(file_path):
     Map4_Summary_Dict['Read Count'].append(initial_unique_hafw)
 
     strong_filtered_df = map4_filtered_strong[map4_filtered_strong['Cat_Count'] >= read_cut_off]
-    dffs = os.path.join(output_directory, f'{Lib_Name}_{base_name}_map4_100_match_read_{read_cut_off}_filter.csv')
+    dffs = os.path.join(output_directory, f'{Lib_Name}_{base_name}_map4_100_match_{read_cut_off}_read_min_filter.csv')
     strong_filtered_df.to_csv(dffs, index=False)
 
     Map4_Summary_Dict['Category'].append('New Section')
