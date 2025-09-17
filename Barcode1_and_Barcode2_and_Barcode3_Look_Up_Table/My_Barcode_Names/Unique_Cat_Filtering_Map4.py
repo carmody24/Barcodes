@@ -51,25 +51,25 @@ def process_map4_file(file_path):
     Map4_Summary_Dict['Category'].append('New Section')
     Map4_Summary_Dict['Read Count'].append('Initial Individual Counts')
 
-    Map4_Summary_Dict['Category'].append('Initial Map4 Unique Cat')
+    Map4_Summary_Dict['Category'].append('Initial Unique Cat')
     Map4_Summary_Dict['Read Count'].append(map4.shape[0])
+
+    total_cat_count = map4['Cat_Count'].sum()
+    Map4_Summary_Dict['Category'].append('Initial Total Read Count')
+    Map4_Summary_Dict['Read Count'].append(total_cat_count)
     
-    # Count unique Tiles initially
     initial_unique_adbc2 = map4['ADBC2'].nunique()
     Map4_Summary_Dict['Category'].append('Initial Unique ADBC2')
     Map4_Summary_Dict['Read Count'].append(initial_unique_adbc2)
 
-    # Count unique Tiles initially
     initial_unique_hawk = map4['HawkBCs'].nunique()
     Map4_Summary_Dict['Category'].append('Initial Unique HawkBCs')
     Map4_Summary_Dict['Read Count'].append(initial_unique_hawk)
 
-    # Count unique Tiles initially
     initial_unique_rtbc = map4['RTBC'].nunique()
     Map4_Summary_Dict['Category'].append('Initial Unique RTBC')
     Map4_Summary_Dict['Read Count'].append(initial_unique_rtbc)
     
-    # Count unique Tiles initially
     initial_unique_ha = map4['HA'].nunique()
     Map4_Summary_Dict['Category'].append('Initial Unique HA')
     Map4_Summary_Dict['Read Count'].append(initial_unique_ha)
@@ -223,23 +223,23 @@ def process_map4_file(file_path):
 
     Map4_Summary_Dict['Category'].append('Unique Cat')
     Map4_Summary_Dict['Read Count'].append(map4_filtered_weak.shape[0])
+
+    total_cat_count_t = map4_filtered_weak['Cat_Count'].sum()
+    Map4_Summary_Dict['Category'].append('Total Read Count')
+    Map4_Summary_Dict['Read Count'].append(total_cat_count_t)
     
-    # Count unique Tiles initially
     initial_unique_adbc2_2w = map4_filtered_weak['ADBC2'].nunique()
     Map4_Summary_Dict['Category'].append('Unique ADBC2')
     Map4_Summary_Dict['Read Count'].append(initial_unique_adbc2_2w)
 
-    # Count unique Tiles initially
     initial_unique_hawk2w = map4_filtered_weak['HawkBCs'].nunique()
     Map4_Summary_Dict['Category'].append('Unique HawkBCs')
     Map4_Summary_Dict['Read Count'].append(initial_unique_hawk2w)
 
-    # Count unique Tiles initially
     initial_unique_rtbc2w = map4_filtered_weak['RTBC'].nunique()
     Map4_Summary_Dict['Category'].append('Unique RTBC')
     Map4_Summary_Dict['Read Count'].append(initial_unique_rtbc2w)
     
-    # Count unique Tiles initially
     initial_unique_ha2w = map4_filtered_weak['HA'].nunique()
     Map4_Summary_Dict['Category'].append('Unique HA')
     Map4_Summary_Dict['Read Count'].append(initial_unique_ha2w)
@@ -313,21 +313,22 @@ def process_map4_file(file_path):
 
     Map4_Summary_Dict['Category'].append('New Section')
     Map4_Summary_Dict['Read Count'].append('After 100% Match Filter Individual Counts')
-
-    Map4_Summary_Dict['Category'].append('Unique Cat Read Count')
+    
+    Map4_Summary_Dict['Category'].append('Unique Cat')
     Map4_Summary_Dict['Read Count'].append(map4_filtered_strong.shape[0])
     
-    # Count unique Tiles initially
+    total_cat_count_s = map4_filtered_strong['Cat_Count'].sum()
+    Map4_Summary_Dict['Category'].append('Total Read Count')
+    Map4_Summary_Dict['Read Count'].append(total_cat_count_s)
+
     initial_unique_adbc2_2 = map4_filtered_strong['ADBC2'].nunique()
     Map4_Summary_Dict['Category'].append('Unique ADBC2')
     Map4_Summary_Dict['Read Count'].append(initial_unique_adbc2_2)
 
-    # Count unique Tiles initially
     initial_unique_hawk2 = map4_filtered_strong['HawkBCs'].nunique()
     Map4_Summary_Dict['Category'].append('Unique HawkBCs')
     Map4_Summary_Dict['Read Count'].append(initial_unique_hawk2)
 
-    # Count unique Tiles initially
     initial_unique_rtbc2 = map4_filtered_strong['RTBC'].nunique()
     Map4_Summary_Dict['Category'].append('Unique RTBC')
     Map4_Summary_Dict['Read Count'].append(initial_unique_rtbc2)
@@ -353,23 +354,23 @@ def process_map4_file(file_path):
 
     Map4_Summary_Dict['Category'].append('Unique Cat')
     Map4_Summary_Dict['Read Count'].append(weak_filtered_df.shape[0])
+
+    total_cat_count_st = weak_filtered_df['Cat_Count'].sum()
+    Map4_Summary_Dict['Category'].append('Total Read Count')
+    Map4_Summary_Dict['Read Count'].append(total_cat_count_st)
     
-    # Count unique Tiles initially
     initial_unique_adbc2fw = weak_filtered_df['ADBC2'].nunique()
     Map4_Summary_Dict['Category'].append('Unique ADBC2')
     Map4_Summary_Dict['Read Count'].append(initial_unique_adbc2fw)
 
-    # Count unique Tiles initially
     initial_unique_hawkfw = weak_filtered_df['HawkBCs'].nunique()
     Map4_Summary_Dict['Category'].append('Unique HawkBCs')
     Map4_Summary_Dict['Read Count'].append(initial_unique_hawkfw)
 
-    # Count unique Tiles initially
     initial_unique_rtbcfw = weak_filtered_df['RTBC'].nunique()
     Map4_Summary_Dict['Category'].append('Unique RTBC')
     Map4_Summary_Dict['Read Count'].append(initial_unique_rtbcfw)
-    
-    # Count unique Tiles initially
+  
     initial_unique_hafw = weak_filtered_df['HA'].nunique()
     Map4_Summary_Dict['Category'].append('Unique HA')
     Map4_Summary_Dict['Read Count'].append(initial_unique_hafw)
@@ -383,23 +384,23 @@ def process_map4_file(file_path):
 
     Map4_Summary_Dict['Category'].append('Unique Cat')
     Map4_Summary_Dict['Read Count'].append(strong_filtered_df.shape[0])
+
+    total_cat_count_sts = strong_filtered_df['Cat_Count'].sum()
+    Map4_Summary_Dict['Category'].append('Total Read Count')
+    Map4_Summary_Dict['Read Count'].append(total_cat_count_sts)
     
-    # Count unique Tiles initially
     initial_unique_adbc2f = strong_filtered_df['ADBC2'].nunique()
     Map4_Summary_Dict['Category'].append('Unique ADBC2')
     Map4_Summary_Dict['Read Count'].append(initial_unique_adbc2f)
 
-    # Count unique Tiles initially
     initial_unique_hawkf = strong_filtered_df['HawkBCs'].nunique()
     Map4_Summary_Dict['Category'].append('Unique HawkBCs')
     Map4_Summary_Dict['Read Count'].append(initial_unique_hawkf)
 
-    # Count unique Tiles initially
     initial_unique_rtbcf = strong_filtered_df['RTBC'].nunique()
     Map4_Summary_Dict['Category'].append('Unique RTBC')
     Map4_Summary_Dict['Read Count'].append(initial_unique_rtbcf)
     
-    # Count unique Tiles initially
     initial_unique_haf = strong_filtered_df['HA'].nunique()
     Map4_Summary_Dict['Category'].append('Unique HA')
     Map4_Summary_Dict['Read Count'].append(initial_unique_haf)
