@@ -70,6 +70,10 @@ def process_map4_file(file_path):
     Map4_Summary_Dict['Category'].append('Initial Unique HA')
     Map4_Summary_Dict['Read Count'].append(initial_unique_ha)
 
+    initial_unique_hay = map4['HAR'].nunique()
+    Map4_Summary_Dict['Category'].append('Initial Unique HAR')
+    Map4_Summary_Dict['Read Count'].append(initial_unique_hay)
+
     # Unique RTBC per HA 
     rtbc_per_ha = map4.groupby('HA')['RTBC'].nunique()
     # Plot histogram
@@ -240,6 +244,10 @@ def process_map4_file(file_path):
     Map4_Summary_Dict['Category'].append('Unique HA')
     Map4_Summary_Dict['Read Count'].append(initial_unique_ha2w)
 
+    nitial_unique_hay = map4_filtered_weak['HAR'].nunique()
+    Map4_Summary_Dict['Category'].append('Unique HAR')
+    Map4_Summary_Dict['Read Count'].append(nitial_unique_hay)
+
     #you can uncomment out this to produce a file of the FULL df after initial filtering but I found it unnessicary 
     #dffpw = os.path.join(output_directory, f'{Lib_Name}_{base_name}_map4_{THRESH}_match_filter.csv')
     #map4_filtered_strong.to_csv(dffpw, index=False)
@@ -334,6 +342,10 @@ def process_map4_file(file_path):
     Map4_Summary_Dict['Category'].append('Unique HA')
     Map4_Summary_Dict['Read Count'].append(initial_unique_ha2)
 
+    nitial_unique_haye = map4_filtered_strong['HAR'].nunique()
+    Map4_Summary_Dict['Category'].append('Unique HAR')
+    Map4_Summary_Dict['Read Count'].append(nitial_unique_haye)
+
 
     #you can uncomment out this to produce a file of the FULL df after initial filtering but I found it unnessicary 
     #dffp = os.path.join(output_directory, f'{Lib_Name}_{base_name}_map4_100_match_filter.csv')
@@ -371,6 +383,10 @@ def process_map4_file(file_path):
     Map4_Summary_Dict['Category'].append('Unique HA')
     Map4_Summary_Dict['Read Count'].append(initial_unique_hafw)
 
+    nitial_unique_hayen = weak_filtered['HAR'].nunique()
+    Map4_Summary_Dict['Category'].append('Unique HAR')
+    Map4_Summary_Dict['Read Count'].append(nitial_unique_hayen)
+
     strong_filtered_df = map4_filtered_strong[map4_filtered_strong['Cat_Count'] >= read_cut_off]
     dffs = os.path.join(output_directory, f'{Lib_Name}_{base_name}_map4_100_match_{read_cut_off}_read_min_filter.csv')
     strong_filtered_df.to_csv(dffs, index=False)
@@ -400,6 +416,10 @@ def process_map4_file(file_path):
     initial_unique_haf = strong_filtered_df['HA'].nunique()
     Map4_Summary_Dict['Category'].append('Unique HA')
     Map4_Summary_Dict['Read Count'].append(initial_unique_haf)
+
+    nitial_unique_hayet = strong_filtered_df['HAR'].nunique()
+    Map4_Summary_Dict['Category'].append('Unique HAR')
+    Map4_Summary_Dict['Read Count'].append(nitial_unique_hayet)
 
     #export summary csv
     map4_Summary_Dict_df = pd.DataFrame.from_dict(Map4_Summary_Dict)
