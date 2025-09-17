@@ -51,7 +51,7 @@ def process_map4_file(file_path):
     Map4_Summary_Dict['Category'].append('New Section')
     Map4_Summary_Dict['Read Count'].append('Initial Individual Counts')
 
-    Map4_Summary_Dict['Category'].append('Map4 Unique Cat Starting Read Count')
+    Map4_Summary_Dict['Category'].append('Initial Map4 Unique Cat')
     Map4_Summary_Dict['Read Count'].append(map4.shape[0])
     
     # Count unique Tiles initially
