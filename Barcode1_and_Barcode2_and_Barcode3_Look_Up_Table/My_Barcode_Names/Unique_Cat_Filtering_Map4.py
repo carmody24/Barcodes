@@ -221,7 +221,7 @@ def process_map4_file(file_path):
     Map4_Summary_Dict['Category'].append('New Section')
     Map4_Summary_Dict['Read Count'].append(f'After {THRESH}% Match Filter Individual Counts')
 
-    Map4_Summary_Dict['Category'].append('Unique Cat Read Count')
+    Map4_Summary_Dict['Category'].append('Unique Cat')
     Map4_Summary_Dict['Read Count'].append(map4_filtered_weak.shape[0])
     
     # Count unique Tiles initially
