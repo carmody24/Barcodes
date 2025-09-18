@@ -383,7 +383,7 @@ def process_map4_file(file_path):
     Map4_Summary_Dict['Category'].append('Unique HA')
     Map4_Summary_Dict['Read Count'].append(initial_unique_hafw)
 
-    nitial_unique_hayen = weak_filtered['HAR'].nunique()
+    nitial_unique_hayen = weak_filtered_df['HAR'].nunique()
     Map4_Summary_Dict['Category'].append('Unique HAR')
     Map4_Summary_Dict['Read Count'].append(nitial_unique_hayen)
 
