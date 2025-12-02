@@ -4,7 +4,7 @@ JN for analysing RNA data with UMIs collected from human cell gene expression ex
 
 Current nomenclature:
 
-Barcode Columns - 'HawkBCs' = designed barcode for tile,'ADBC2' = random barcode for tile,'RTBC' = random  barcode for reporter, 'Designed' = long protein sequence the tile barcode maps back to, referred to AD for activation domain because that is what is being looked at in this study
+Barcode Columns - 'HawkBCs' = designed barcode for tile,'ADBC2' = random barcode for tile,'RTBC' = random  barcode for reporter, 'Designed' = long sequence the tile barcode maps back to (referred to AD for activation domain because that is what is being looked at often in the lab)
 
 Concatenated Barcode Combinations Columns- 'HA' = (HawkBCs-ADBC2) is used as the AD barcode that is used for counting AD UMIs, 'HAR'(HawkBCs-ADBC2-RTBC) comes from the step1 map and was used to match AD barcode UMI counts with Reporter barcode UMI counts, 'Cat' (HawkBCs-ADBC2-RTBC-Designed) this is the most often used combination because it most accurately identifies unique tile integrations. 
 
