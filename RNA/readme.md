@@ -1,0 +1,2 @@
+**UMI RNA Analysis Post Sanj**
+JN for analysing RNA data with UMIs collected from human cell gene expression experiment. The look up table associated with this experiment to map the barcodes back to the origional tile used is in the Barcode1_Barcode2_and_Barcode3 folder. It is labeled Post_Sanj because there is initial RNA processing and error correcting that is done with script made by Sanjana that is required before this step, I will link to it when she finishes the final version. 
