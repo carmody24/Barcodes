@@ -13,3 +13,8 @@ Other Columns in RNA Data: 'number' = sample number used to parse RNA data into 
 MetaData Columns - 'Mutation'= identifier for type of variant made ( ex: 1-3-4-2 shuffle, S > A at position 49, etc.), 'Mutant Sequence'= protein sequence of tile, 'Gene Name' = gene the tile origionated from. These columns are used to associate metadata with step1 (if not done so already) and the RNA data. 
 
 
+**RNA vs gDNA**
+
+Plots correlations of read count of gDNA and UMI count of RNA. Batch process takes inputs of one folder containing all gDNA files and one folder containing all RNA files. Relies on one csv file for RNA and one csv file for gDNA for each sample listed in the order you want to compare them in (RNA1 with gDNA1). You specify the columns you want to use for each comparison within those files because the reporter barcode and AD barcode will have seperate counts and it makes seperate graphs for each. It compares based on matching value in the 'Cat' column (unique integarations). On the graphs r, r^2, the number matched, and the number unmatched from each dataset are displayed.The title contains the names of the two files compared as a check against wrong file comparison. 
+
+
